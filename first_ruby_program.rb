@@ -182,6 +182,9 @@
 # puts "Merged hashes #{pants_ties}"
 # # Merged hashes {:parachute=>:cool, :skinny=>"ewww", "bow ties"=>4, "cravat"=>15}
 
+
+#################################################
+
 instruction_staff = ["Casey", "Hannah", "Jisie"]
 
 my_array = Array.new
@@ -196,21 +199,38 @@ arr3 = [1,2,3,4,5]
 arr3.push("apples")
 puts "arr3: #{arr3}"
 # arr3: [1, 2, 3, 4, 5, "apples"]
-puts "arr3, 2nd element: #{arr3[1]}"
+puts "arr3, 2nd element: #{arr3[-5]}"
 # arr3, 2nd element: 2
+puts "arr3, 4th element: #{arr3.at(3)}"
+# arr3, 4th element: 4
+puts "arr3 elements from index 1 to 3: #{arr3[1..3]}"
+# arr3 elements from index 1 to 3: [2, 3, 4]
 p arr3[20]
 # nil
+puts "first: #{arr3.first} last: #{arr3.last}"
+#first: 1 last: apples
+puts "Does arr3 include 5? #{arr3.include?(5)}"
+# Does arr3 include 5? true
 arr4 = Array.new(5)
 puts "arr4: #{arr4} and the length is #{arr4.length}"
 # arr4: [nil, nil, nil, nil, nil] and the length is 5
 arr5 = Array.new(3, "apple")
 puts "arr5: #{arr5}"
 # arr5: ["apple", "apple", "apple"]
+arr5.unshift("HELLO")
+puts "ARR5 #{arr5}"
+# ARR5 ["HELLO", "apple", "apple", "apple"]
+arr5.pop
+puts "popped arr5: #{arr5}"
+# popped arr5: ["HELLO", "apple", "apple"]
 arr6 = Array.new(4) {Array.new}
 puts "arr6: #{arr6}"
 # arr6: [{}, {}, {}, {}]
 p arr6
 # [[], [], [], []]
+p arr6.size
+#4
+
 
 
 
