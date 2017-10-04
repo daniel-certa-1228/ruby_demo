@@ -132,3 +132,40 @@ puts pants
 # Does pants have value :cool? false
 # Does pants have value :banana? false
 # {:parachute=>"not cool"}
+
+pants = {
+    parachute: :cool,
+    skinny: "ewww" }
+puts pants[:parachute]
+puts "Object id of pants: #{pants.object_id}"
+puts "Object id of pants[:parachute]: #{pants[:parachute].object_id}"
+for i in pants.keys
+  puts i.object_id
+end
+shirts = {
+  parachute: :cool,
+  skinny: "ewww" }
+puts "Object id of shirts: #{shirts.object_id}"
+puts "Object id of shirts[:parachute]: #{shirts[:parachute].object_id}"
+for i in shirts.keys
+  puts i.object_id
+end
+
+# cool
+# Object id of pants: 70279544447760
+# Object id of pants[:parachute]: 920028
+# 919068
+# 919388
+# Object id of shirts: 70279544447460
+# Object id of shirts[:parachute]: 920028
+# 919068
+# 919388
+
+puts "Original hash: #{shirts}"
+# Original hash: {:parachute=>:cool, :skinny=>"ewww"}
+puts "Inverted hash #{shirts.invert}"
+# Inverted hash {:cool=>:parachute, "ewww"=>:skinny}
+puts "The key of eww #{shirts.key('ewww')}"
+# The key of eww skinny
+puts "The key of cool, a symbol is #{shirts.key(:cool)}"
+# The key of cool, a symbol is parachute
