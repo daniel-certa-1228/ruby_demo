@@ -110,14 +110,25 @@ puts ties["bow ties"]
 # 4
 
 pants = {parachute: "cool", skinny: "eww"}
+puts "PANTS #{pants}"
+pants[:parachute] = "not cool"
 puts pants[:parachute]
 puts "Is the pants hash empty? #{pants.empty?}"
 puts pants.keys
 puts "Does pants have the key parachut? #{pants.has_key?(:parachute)}"
+puts "Does pants have the key banana? #{pants.has_key?(:banana)}"
+puts "Does pants have value :cool? #{pants.has_value?("cool")}"
+puts "Does pants have value :banana? #{pants.has_value?("banana")}"
+pants.delete(:skinny)
+puts pants
 
-# cool
+# PANTS {:parachute=>"cool", :skinny=>"eww"}
+# not cool
 # Is the pants hash empty? false
 # parachute
 # skinny
 # Does pants have the key parachut? true
-
+# Does pants have the key banana? false
+# Does pants have value :cool? false
+# Does pants have value :banana? false
+# {:parachute=>"not cool"}
