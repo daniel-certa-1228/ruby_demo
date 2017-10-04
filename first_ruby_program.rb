@@ -82,28 +82,42 @@ puts "Object ID of str2 #{str2.object_id}"
 # Object ID of str1 70246413659820
 # Object ID of str2 70246413659740
 
-socks = Hash.new
+socks = Hash.new(0)
 puts socks
+puts socks[:none]
 socks = {:polka_dot => 3, :striped => 5}
+socks.default = 0
 puts socks
+puts socks[:none]
 puts socks[:polka_dot]
 
 # {}
+# 0
 # {:polka_dot=>3, :striped=>5}
+# 0
 # 3
 
 ties = {}
 puts ties
+puts "Is the ties hash empty? #{ties.empty?}"
 ties = {"bow ties" => 4, "cravat" => 15}
 puts ties
 puts ties["bow ties"]
 
 # {}
+# Is the ties hash empty? true
 # {"bow ties"=>4, "cravat"=>15}
 # 4
 
 pants = {parachute: "cool", skinny: "eww"}
 puts pants[:parachute]
+puts "Is the pants hash empty? #{pants.empty?}"
+puts pants.keys
+puts "Does pants have the key parachut? #{pants.has_key?(:parachute)}"
 
 # cool
+# Is the pants hash empty? false
+# parachute
+# skinny
+# Does pants have the key parachut? true
 
