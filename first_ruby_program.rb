@@ -161,11 +161,23 @@ end
 # 919068
 # 919388
 
-puts "Original hash: #{shirts}"
-# Original hash: {:parachute=>:cool, :skinny=>"ewww"}
-puts "Inverted hash #{shirts.invert}"
-# Inverted hash {:cool=>:parachute, "ewww"=>:skinny}
+puts "Original hash: #{shirts} and its object id: #{shirts.object_id}"
+# Original hash: {:parachute=>:cool, :skinny=>"ewww"} and its object id: 70169150501340
+inv_shirts = shirts.invert
+puts "Inverted hash #{inv_shirts} and its object ID is #{inv_shirts.object_id}"
+# Inverted hash {:cool=>:parachute, "ewww"=>:skinny} and its object ID is 70137340897480
 puts "The key of eww #{shirts.key('ewww')}"
 # The key of eww skinny
 puts "The key of cool, a symbol is #{shirts.key(:cool)}"
 # The key of cool, a symbol is parachute
+puts "The hash #{shirts} has a length of #{shirts.length}"
+# The hash {:parachute=>:cool, :skinny=>"ewww"} has a length of 2
+puts shirts.length
+# 2
+puts str1.length
+# 5
+puts instruction_staff.length
+# 3
+pants_ties = pants.merge(ties)
+puts "Merged hashes #{pants_ties}"
+# Merged hashes {:parachute=>:cool, :skinny=>"ewww", "bow ties"=>4, "cravat"=>15}
